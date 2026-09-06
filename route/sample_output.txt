@@ -1,0 +1,105 @@
+Selected landmarks for ALT heuristic: ['Airport', 'IndustrialZone', 'Suburbia']
+
+======================================================================
+ROUTE QUERY: Airport -> IndustrialZone
+======================================================================
+
+-- Dijkstra / Uniform Cost Search (baseline) --
+Route: Airport -> CityCenter -> TechPark -> IndustrialZone
+Total cost: 23.0
+Nodes expanded: 13 | Nodes generated: 16 | Time: 0.000022s
+
+-- A* with straight-line distance heuristic --
+Route: Airport -> CityCenter -> TechPark -> IndustrialZone
+Total cost: 23.0
+Nodes expanded: 10 | Nodes generated: 14 | Time: 0.000047s
+
+-- A* with landmark-based (ALT) heuristic --
+Route: Airport -> CityCenter -> TechPark -> IndustrialZone
+Total cost: 23.0
+Nodes expanded: 5 | Nodes generated: 11 | Time: 0.000029s
+
+Comparison:
+Strategy                    Cost      Expanded   Generated  Time(s)   
+----------------------------------------------------------------------
+Dijkstra (baseline)         23.0      13         16         0.000022  
+A* straight-line            23.0      10         14         0.000047  
+A* landmark (ALT)           23.0      5          11         0.000029  
+
+======================================================================
+ROUTE QUERY: Suburbia -> LakeView
+======================================================================
+
+-- Dijkstra / Uniform Cost Search (baseline) --
+Route: Suburbia -> OldTown -> Market -> CityCenter -> University -> LakeView
+Total cost: 20.0
+Nodes expanded: 14 | Nodes generated: 15 | Time: 0.000018s
+
+-- A* with straight-line distance heuristic --
+Route: Suburbia -> OldTown -> Market -> CityCenter -> University -> LakeView
+Total cost: 20.0
+Nodes expanded: 9 | Nodes generated: 16 | Time: 0.000018s
+
+-- A* with landmark-based (ALT) heuristic --
+Route: Suburbia -> OldTown -> Market -> CityCenter -> University -> LakeView
+Total cost: 20.0
+Nodes expanded: 9 | Nodes generated: 13 | Time: 0.000057s
+
+Comparison:
+Strategy                    Cost      Expanded   Generated  Time(s)   
+----------------------------------------------------------------------
+Dijkstra (baseline)         20.0      14         15         0.000018  
+A* straight-line            20.0      9          16         0.000018  
+A* landmark (ALT)           20.0      9          13         0.000057  
+
+======================================================================
+ROUTE QUERY: Hilltop -> Harbor
+======================================================================
+
+-- Dijkstra / Uniform Cost Search (baseline) --
+Route: Hilltop -> Museum -> OldTown -> Riverside -> Harbor
+Total cost: 23.0
+Nodes expanded: 14 | Nodes generated: 16 | Time: 0.000018s
+
+-- A* with straight-line distance heuristic --
+Route: Hilltop -> Museum -> OldTown -> Riverside -> Harbor
+Total cost: 23.0
+Nodes expanded: 12 | Nodes generated: 15 | Time: 0.000015s
+
+-- A* with landmark-based (ALT) heuristic --
+Route: Hilltop -> Museum -> OldTown -> Riverside -> Harbor
+Total cost: 23.0
+Nodes expanded: 9 | Nodes generated: 15 | Time: 0.000025s
+
+Comparison:
+Strategy                    Cost      Expanded   Generated  Time(s)   
+----------------------------------------------------------------------
+Dijkstra (baseline)         23.0      14         16         0.000018  
+A* straight-line            23.0      12         15         0.000015  
+A* landmark (ALT)           23.0      9          15         0.000025  
+
+======================================================================
+ROUTE QUERY: Museum -> TechPark
+======================================================================
+
+-- Dijkstra / Uniform Cost Search (baseline) --
+Route: Museum -> Market -> Stadium -> TechPark
+Total cost: 15.0
+Nodes expanded: 11 | Nodes generated: 15 | Time: 0.000012s
+
+-- A* with straight-line distance heuristic --
+Route: Museum -> Market -> Stadium -> TechPark
+Total cost: 15.0
+Nodes expanded: 6 | Nodes generated: 12 | Time: 0.000009s
+
+-- A* with landmark-based (ALT) heuristic --
+Route: Museum -> Market -> Stadium -> TechPark
+Total cost: 15.0
+Nodes expanded: 4 | Nodes generated: 9 | Time: 0.000011s
+
+Comparison:
+Strategy                    Cost      Expanded   Generated  Time(s)   
+----------------------------------------------------------------------
+Dijkstra (baseline)         15.0      11         15         0.000012  
+A* straight-line            15.0      6          12         0.000009  
+A* landmark (ALT)           15.0      4          9          0.000011

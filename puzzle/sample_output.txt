@@ -1,0 +1,75 @@
+======================================================================
+PART A DEMO: single puzzle solved and displayed step by step
+======================================================================
+Initial state:
+1 2 3
+4 _ 6
+7 5 8
+
+Solvable? True
+
+Solved in 2 moves: Down -> Right
+
+-- Start --
+1 2 3
+4 _ 6
+7 5 8
+
+-- Move 1: Down --
+1 2 3
+4 5 6
+7 _ 8
+
+-- Goal (move 2: Right) --
+1 2 3
+4 5 6
+7 8 _
+
+======================================================================
+UNSOLVABLE PUZZLE CHECK
+======================================================================
+State:
+2 4 3
+5 _ 6
+7 1 8
+Solvable? False
+Search result -> solved: False
+
+======================================================================
+PART B: heuristic comparison across several puzzle instances
+======================================================================
+
+Easy (5) start state:
+1 2 3
+4 5 6
+_ 7 8
+
+Medium (12) start state:
+1 2 3
+4 8 5
+_ 7 6
+
+Hard (25) start state:
+1 3 6
+_ 4 2
+7 5 8
+
+Very Hard (35) start state:
+2 _ 5
+1 8 6
+4 7 3
+
+Puzzle          Heuristic                   Solved  Moves   Expanded   Generated  Time(s)   
+--------------------------------------------------------------------------------------------
+Easy (5)        misplaced                   True    2       3          5          0.00002   
+Easy (5)        manhattan                   True    2       3          5          0.00003   
+Easy (5)        manhattan_linear_conflict   True    2       3          5          0.00006   
+Medium (12)     misplaced                   True    4       5          10         0.00003   
+Medium (12)     manhattan                   True    4       5          10         0.00008   
+Medium (12)     manhattan_linear_conflict   True    4       5          10         0.00010   
+Hard (25)       misplaced                   True    7       14         27         0.00008   
+Hard (25)       manhattan                   True    7       10         20         0.00009   
+Hard (25)       manhattan_linear_conflict   True    7       10         20         0.00019   
+Very Hard (35)  misplaced                   True    19      2555       4100       0.01714   
+Very Hard (35)  manhattan                   True    19      603        977        0.00466   
+Very Hard (35)  manhattan_linear_conflict   True    19      390        630        0.00639
